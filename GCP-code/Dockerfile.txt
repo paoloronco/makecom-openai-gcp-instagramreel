@@ -1,0 +1,24 @@
+# Usa un'immagine base Python con ffmpeg
+FROM python:3.11
+
+# Installa ffmpeg
+RUN apt-get update && apt-get install -y ffmpeg
+
+# Imposta la cartella di lavoro
+WORKDIR /app
+
+# Copia i file dell'app
+COPY requirements.txt requirements.txt
+COPY main.py main.py
+
+# Installa i pacchetti Python
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Assicurati che Gunicorn sia installato
+RUN pip install gunicorn
+
+# Esponi la porta 8080 richiesta da Cloud Run
+EXPOSE 8080
+
+# Comando di avvio
+CMD exec gunicorn --bind :8080 --workers 1 --threads 8 main:app
