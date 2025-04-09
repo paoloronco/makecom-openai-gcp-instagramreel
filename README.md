@@ -1,6 +1,6 @@
 # Complete Guide: Automating AI-Powered Instagram Reels with Make.com, OpenAI, and Google Cloud
 
-![Alt text](image/workflow.png)
+![Alt text](images/workflow.png)
 
 ## Introduction
 This detailed guide walks you step-by-step through setting up and launching a **pre-configured Make.com workflow** that automatically generates and publishes Instagram Reels using just a text prompt. The workflow is provided as a **JSON file** and only needs to be **imported** into Make.com, then configured properly.
